@@ -1,0 +1,45 @@
+admin -admin@Kaguvi
+vamarecha - 1234takaenda
+
+1.DONE Create virtual environment and activate it
+2.DONE Install Django and create project (Kaguvi)
+3.DONE Create app for core views and add to installed apps
+4.DONE Add a simple front page
+5.DONE Add static files
+
+6.DONE Create app for vendors and add to installed apps
+7.DONE Create database model for vendors
+8.DONE Create view, template and form for sign up
+9.DONE Create simple area for vendors (testing)
+
+10.DONE Make it possible to log in and out
+
+11.DONE Create models for Products and Categories
+12.DONE Show list of Products in the Admin area
+13.DONE Make it possible for vendors to add Products
+
+14.DONE Show newest products on the frontpage
+15.DONE Show detail view of a product
+16.DONE Show a category
+17.DONE Create a simple search
+
+18.DONE Make it possible to add products to the cart
+19.DONE Create view template for the cart
+20.DONE Make it possible to remove products from the cart
+21.DONE Make it possible to update the quantity
+
+22.DONE Create new app and models for the orders
+23.DONE Make it possible to checkout
+24.DONE Create a success page
+
+25.DONE Show orders in the vendor area.
+
+26.DONE Make it possible to edit a vendor.
+
+27.DONE Notify vendor after a sale.
+
+28.DONE Show a list of vendors.
+29.Make it possible to see all products from a vendor.
+
+
+

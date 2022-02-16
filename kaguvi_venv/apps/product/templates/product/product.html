@@ -1,0 +1,51 @@
+{%extends 'core/base.html'%}
+{%block title%}{{ product.title }} | {%endblock%}
+
+ {%block content%}
+    {% if product.image %}
+
+        <figure class="">
+                <img src="{{ product.image.url }}">
+        </figure>
+
+    {% endif %}
+
+    <h1 class="title">{{ product.title }}, ${{ product.price }}</h1>
+
+    <p><span>{{ product.vendor.name }}</span></p>
+
+    <p>{{ product.description }}</p>
+
+    <hr>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class=" alert alert-primary is-toast" role="alert">{{ message }}</div>
+        {% endfor %}
+
+    {%endif%}
+    <form method="post" action=".">
+        {% csrf_token %}
+        <div>
+            <input type="number" name="quantity" value="1" class="input" min="1">
+        </div>
+        <div>
+            <button class="btn btn-primary">Add to Cart</button>
+        </div>
+    </form>
+
+    {% if similar_products %}
+    <hr>
+
+    <div>
+        <div class="col-12">
+            <h2>Similar Products</h2>
+        </div>
+
+        {% for product in similar_products %}
+            {% include 'product/parts/list_item.html' %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+ {% endblock %}

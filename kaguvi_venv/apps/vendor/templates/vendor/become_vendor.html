@@ -1,0 +1,21 @@
+{%extends 'core/base.html'%}
+{%block title%}Become Vendor | {%endblock%}
+{%block content%}
+
+<form method="post" action=".">
+    {% csrf_token %} <!---consistency, cant accept post request from other pages other than the current one--->
+<div class="m-5">
+    {{form.as_p}} <!---show django form as paragraph--->
+
+    <div class="field">
+        <div class="control">
+            <button class="btn btn-dark">SIGN UP</button>
+        </div>
+    </div>
+</div>
+</form>
+<hr>
+    <h2>Already have an account?</h2>
+    <a href="{% url 'login' %}">Log In</a>
+</hr>
+{%endblock%}

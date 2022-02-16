@@ -1,0 +1,193 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Cart | {%endblock%}
+
+{% block content %}
+    <h1 class="title"> Cart </h1>
+
+    {% if cart %}
+
+        <div>
+            <div>
+                <table>
+                    <thead>
+                        <th></th>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th></th>
+
+                    </thead>
+                    <tbody>
+                    {% for item in cart %}
+                        <tr>
+                            <td>
+                                <figure class="image size-64">
+                                    <img src="{{ item.product.get_thumbnail }}">
+                                </figure>
+                            </td>
+                            <td>
+                                <a href="{% url 'product' item.product.category.slug item.product.slug %}">{{ item.product.title }}</a>
+                            </td>
+                            <td>
+                                {{ item.quantity }}
+
+                                <a href="?change_quantity={{ item.id }}&quantity=-1">-</a>
+                                <a href="?change_quantity={{ item.id }}&quantity=+1">+</a>
+                            </td>
+                            <td>${{ item.total_price }}</td>
+                            <td><a href="?remove_from_cart={{ item.id }}">Remove</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td><strong>Total Cost</strong></td>
+                            <td><strong>{{ cart|length }}</strong></td>
+                            <td colspan="2"><strong>${{ cart.get_total_cost }}</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <h2>Contact Information</h2>
+
+        <form method="post" action="." id="payment-form">
+            {% csrf_token %}
+            {% if form.non_field_errors%}
+                <div>
+                    {{form.non_field_errors}}
+                </div>
+            {% endif %}
+            {% if form.errors %}
+                <div>
+                    <ul>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li><strong>{{ field.label }}:</strong>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+
+            <div class="columns">
+                <div>
+                    <div>
+                        <label>First name</label>
+
+                        <div>
+                            <input class="input" type="text" name="first_name">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Last name</label>
+
+                        <div>
+                            <input class="input" type="text" name="last_name">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Email</label>
+
+                        <div>
+                            <input class="input" type="email" name="email">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Phone</label>
+
+                        <div>
+                            <input class="input" type="text" name="phone">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Address</label>
+
+                        <div>
+                            <input class="input" type="text" name="address">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Zip Code</label>
+
+                        <div>
+                            <input class="input" type="text" name="zipcode">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Place</label>
+
+                        <div>
+                            <input class="input" type="text" name="place">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <h2 class="subtitle">Payment Information</h2>
+
+            <div id="card-element">
+                <!--A simple stripe element will be inserted here-->
+            </div>
+
+            {% if messages %}
+                {% for message in messages %}
+                        <div>{{ message }}</div>
+                {% endfor%}
+            {% endif %}
+
+            <div class="field">
+                <div>
+                    <button class="btn btn-primary">Check Out</button>
+                </div>
+            </div>
+        </form>
+
+    {% else %}
+        <p>You don't have any products in your cart</p>
+
+    {% endif %}
+
+{% endblock %}
+{% block scripts %}
+     <script src="https://js.stripe.com/v3/"></script>
+     <script>
+        var stripe = Stripe('{{ stripe_pub_key }}');
+        var elements = stripe.elements();
+
+        var card = elements.create('card');
+
+        card.mount('#card-element');
+
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+
+        function stripeTokenHandler(token) {
+            var form = document.getElementById('payment-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripe_token');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+
+            form.submit();
+        }
+    </script>
+
+{% endblock %}

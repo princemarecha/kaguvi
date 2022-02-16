@@ -1,0 +1,15 @@
+{%extends 'core/base.html'%}
+{%block title%}Welcome | {%endblock%}
+
+ {%block content%}
+<div class="col-6">
+      <div class="col-12 justify-center" >
+           <h2 class="">NEWEST PRODUCTS</h2>
+      </div>
+
+      {% for product in newest_product %}
+          {% include 'product/parts/list_item.html' %}
+      {%endfor%}
+
+</div>
+ {%endblock%}
