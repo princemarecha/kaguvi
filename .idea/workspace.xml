@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="436e877f-e0b3-445f-ae75-00ad55530b81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/cart/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/cart/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/core/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/core/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/order/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/order/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/product/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/product/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/kaguvi/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/kaguvi/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

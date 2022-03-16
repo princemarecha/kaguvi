@@ -25,7 +25,7 @@ SECRET_KEY = 'jcnriyo2i6qc_j34qrp(0^00p$v^v+bi9m+uzytj1e*#767h&3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['octie21.pythonanywhere.com']
 
 STRIPE_PUB_KEY = 'pk_test_51KRZL4AluFrMPOCLArjgOBPbf1YPiEGZ0sMZIfYcboXoDl0HHm1wwkkQFmRPWX4vSx82d9X8y2vzGWMrczi8l2Y000tOwUZ3Kw'
 STRIPE_SECRET_KEY = 'sk_test_51KRZL4AluFrMPOCLAmhzNUAy3PD2CaAhxnBV49HWSyLqHfeG5MTyqXyHqdPoOQShjGnRY4rPOEyXqPhiJ8S7C86T00E1mkr21C'
