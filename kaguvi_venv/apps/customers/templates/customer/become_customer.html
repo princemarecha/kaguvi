@@ -1,8 +1,11 @@
 {%extends 'core/base.html'%}
-{%block title%}Log In | {%endblock%}
+
+
+{%block title%}Become Customer | {%endblock%}
+
 {%block content%}
 
-<h1>Vendor Login</h1>
+{{request.user.customer}}
 
 <form method="post" action=".">
     {% csrf_token %} <!---consistency, cant accept post request from other pages other than the current one--->
@@ -11,9 +14,13 @@
 
     <div class="field">
         <div class="control">
-            <button class="btn btn-dark">Log In</button>
+            <button class="btn btn-dark">SIGN UP</button>
         </div>
     </div>
 </div>
 </form>
+<hr>
+    <h2>Already have an account?</h2>
+    <a href="{% url 'customer_login' %}">Log In</a>
+</hr>
 {%endblock%}

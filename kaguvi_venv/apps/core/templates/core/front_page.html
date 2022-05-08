@@ -7,9 +7,22 @@
            <h2 class="">NEWEST PRODUCTS</h2>
       </div>
 
-      {% for product in newest_product %}
-          {% include 'product/parts/list_item.html' %}
-      {%endfor%}
+    {% for product in newest_product %}
+                {% include 'product/parts/list_item.html' %}
+    {%endfor%}
+
+    <h1 id="Reco_banner">Recommendations For You</h1>
+    <script>
+        if ('{{request.user.is_anonymous}}' == 'True')
+            {
+                document.getElementById("Reco_banner").innerHTML = "Sign Up to Get Recommendations";
+            }
+    </script>
+
+
+    {% for product in recommended %}
+                {% include 'product/parts/list_item.html' %}
+    {%endfor%}
 
 </div>
  {%endblock%}

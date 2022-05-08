@@ -1,0 +1,30 @@
+{%extends 'core/base.html'%}
+
+
+{%block title%}Become Customer | {%endblock%}
+
+{%block content%}
+
+
+<form method="post"> {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="button" onclick="myFunction()">Try it</button>
+    <input onclick="myFunction()" type="submit" value="Save"/>
+</form>
+
+<script>
+function myFunction() {
+var a = 1;
+var length = document.getElementById("id_user").options.length;
+
+  for (let i= 1; i<length;i++)
+        {
+            if (document.getElementById("id_user").options[i].text == ("{{request.user.username}}") )
+            {
+            document.getElementById("id_user").selectedIndex = i;
+            }
+        }
+}
+</script>
+{%endblock%}

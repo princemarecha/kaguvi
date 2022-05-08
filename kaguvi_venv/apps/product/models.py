@@ -26,6 +26,9 @@ class Product (models.Model):
     description = models.TextField(blank=True, null=True)
     price  = models.DecimalField(max_digits=6, decimal_places=2)
     date_added = models.DateTimeField(auto_now_add=True)
+    car = models.CharField(max_length=255)
+    model = models.CharField(max_length=255)
+    engine =  models.CharField(max_length=255)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     thumbnail = models.ImageField(upload_to='uploads/', blank=True, null=True)
 

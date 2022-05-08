@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -69,8 +69,15 @@
             <a href="{%url 'become_vendor'%}" class="huchi">Become Vendor</a>
         {% endif %}
 
-        <a href= "{%url 'vendors'%}">Vendors</a>
+        <a href= "{%url 'become_customer'%}">Become a customer</a>
+        <a href= "{%url 'vendors'%}">Vendors</a><br>
+        <a href="{% url 'customer_login' %}">Customer Log In</a><br>
+        <a href="{% url 'login' %}">Vendor Log In</a><br>
         <h4>Ndakapenfa</h4>
+        {{request.user.customer.username}}<br>
+        {{request.user.customer.car}}<br>
+        {{request.user.customer.model}}<br>
+        {{request.user.customer.engine}}
     </div>
 </footer>
 {%block scripts%}
