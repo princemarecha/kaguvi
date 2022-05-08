@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="436e877f-e0b3-445f-ae75-00ad55530b81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/front_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/front_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/product/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/product/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/parts/list_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/parts/list_item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendor_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendor_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/kaguvi/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/kaguvi/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/kaguvi/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/kaguvi/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
