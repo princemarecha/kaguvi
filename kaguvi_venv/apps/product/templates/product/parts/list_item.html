@@ -1,14 +1,14 @@
- <div class="">
+ <div class="p-5">
      <div class="box">
-         <figure>
-             <img src="{{ product.get_thumbnail }}">
+         <figure >
+             <img src="{{ product.get_thumbnail }}" class="product_img mb-2 ml-0" >
          </figure>
-         <h2 class="subtitle"> {{product.title}} </h2>
-         <h3 class="subtitle"> For: {{product.car}} </h3>
-         <h4 class="subtitle"> Model: {{product.model}} </h4>
-         <h4 class="subtitle"> Engine: {{product.engine}} </h4>
-         <h3 class="price">${{product.price}}</h3>
-         <a href="{% url 'product' product.category.slug product.slug %}" class="btn btn-primary">VIEW</a>
+         <h4 class="subtitle"> {{product.title}} </h4>
+         <h6 class="subtitle"> For: {{product.car}} </h6>
+         <h6 class="subtitle"> Model: {{product.model}} </h6>
+         <h6 class="subtitle"> Engine: {{product.engine}} </h6>
+         <h6 class="price">${{product.price}}</h6>
+         <div class="d-flex justify-content-end"><button  style=""><a href="{% url 'product' product.category.slug product.slug %}">VIEW</a></button></div>
 
      </div>
  </div>

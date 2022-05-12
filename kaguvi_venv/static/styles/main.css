@@ -1,3 +1,7 @@
-h2 {
-text-transform: uppercase;
+* {
+font-family: Century Gothic;
+}
+.product_img{
+width: 190px;
+height:130px;
 }

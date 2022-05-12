@@ -1,0 +1,21 @@
+{%extends 'core/base.html'%}
+
+
+{%block title%}Become Vendor | {%endblock%}
+
+{%block content%}
+
+
+<form method="post"> {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="button" onclick="myFunction()">Try it</button>
+    <input onclick="myFunction()" type="submit" value="Save"/>
+</form>
+
+<script>
+function myFunction() {
+document.getElementById("id_vendor").selectedIndex = 1;
+}
+</script>
+{%endblock%}

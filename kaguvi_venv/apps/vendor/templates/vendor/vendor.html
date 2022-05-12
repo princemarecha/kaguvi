@@ -12,4 +12,63 @@
       {%endfor%}
 
 </div>
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        x.innerHTML="Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude +
+            "<br>DestiLat: "+ {{vendor.vendorprofile.latitude}} +
+            "<br>DestiLong: " + {{vendor.vendorprofile.longitude}};
+        var lat  = position.coords.latitude;
+        var long = position.coords.longitude;
+
+        var latDest=  {{vendor.vendorprofile.latitude}};
+        var longDest= {{vendor.vendorprofile.longitude}}
+        transfer(lat,long,latDest,longDest);
+    }
+
+
+    function transfer(lat,long,latDest,longDest) {
+
+
+        var map = new Microsoft.Maps.Map('#myMap', {
+            credentials: 'AjGsza8NB2YlYtJxm134DKtF90wtDwjxIOnOPApDdCmsY9Ot9QRoRXskTNseqa3y',
+            center: new Microsoft.Maps.Location(lat, long),
+            zoom: 12,
+        });
+        Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
+            var directionsManager = new Microsoft.Maps.Directions.DirectionsManager(map);
+            // Set Route Mode to driving
+            directionsManager.setRequestOptions({ routeMode: Microsoft.Maps.Directions.RouteMode.driving });
+            var waypoint1 = new Microsoft.Maps.Directions.Waypoint({ address: 'You are here', location: new Microsoft.Maps.Location(lat, long) });
+            var waypoint2 = new Microsoft.Maps.Directions.Waypoint({ address: '{{vendor.vendorprofile.title}}', location: new Microsoft.Maps.Location(latDest, longDest) });
+            directionsManager.addWaypoint(waypoint1);
+            directionsManager.addWaypoint(waypoint2);
+            // Set the element in which the itinerary will be rendered
+            directionsManager.setRenderOptions({ itineraryContainer: document.getElementById('printoutPanel') });
+            directionsManager.calculateDirections();
+        });
+    }
+
+</script>
+<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+<div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+<div id="printoutPanel"></div>
+
+
  {%endblock%}

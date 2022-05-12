@@ -7,7 +7,7 @@ from django.utils.text import slugify #to slugify the title
 from apps.product.models import Product
 #import our database model
 from .models import Vendor
-from .forms import ProductForm
+from .forms import ProductForm, vendorProfile
 
 #view to create vendor
 def become_vendor(request):
@@ -21,7 +21,7 @@ def become_vendor(request):
 
             vendor = Vendor.objects.create(name=user.username, created_by=user) #vendor creation based on the newly created user
 
-            return redirect('frontpage')
+            return redirect('your_location')
     else:
             form = UserCreationForm #leave it blank so that we don't parse any infomation in there
 
@@ -92,6 +92,18 @@ def vendors(request):
 
 def vendor(request, vendor_id):
     vendor = get_object_or_404(Vendor, pk=vendor_id) #Vendor model and its primary key for detailed view of vendor
-
     return render(request, 'vendor/vendor.html', {'vendor': vendor})
+
+def vendor_profile(request):
+
+    form = vendorProfile(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('frontpage')
+
+    form = vendorProfile()
+    context = {
+        'form':form
+    }
+    return render(request, 'vendor/vendor_profile.html', context)
 

@@ -13,9 +13,9 @@
 </head>
 <body>
 <header>
-     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top p-5 pt-3 pb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{%url 'frontpage'%}"><img src="images/tazium.png"></a>
+            <a class="navbar-brand" href="{%url 'frontpage'%}"><img src="images/logo.png"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,11 +31,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
                     </li>
-                    {% for category in menu_categories %}
-                    <li class="nav-item">
-                    <a href="{% url 'category' category.slug %}" class="nav-link">{{category.title}}</a>
-                    </li>
-                    {% endfor %}
                      <li class="nav-item">
                         <a class="nav-link" href="{% url 'cart' %}">CART{% if cart %} ({{cart|length}}){%endif%}</a>
                     </li>
@@ -44,10 +39,18 @@
         </div>
     </nav>
 
-    <form method="get" action="{% url 'search' %}">
+    <div class="d-flex m-4 p-4" style="background:#3E3C3C">
+        {% for category in menu_categories %}
+                    <li class="">
+                    <a href="{% url 'category' category.slug %}" style="color:#E1E1E1; font-family: Century Gothic;">{{category.title}}</a>
+                    </li>
+        {% endfor %}
+    </div>
+
+    <form method="get" action="{% url 'search' %}" class="m-4 " style="width:300px;">
        <div class="input-group">
-              <input type="text" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="query"/>
-              <button class="btn btn-outline-primary">search</button>
+              <input type="text" class="form-control rounded"  placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="query"/>
+              <button class="btn btn-outline-dark btn-dark " style="color:gray"  >search</button>
         </div>
     </form>
 
@@ -77,7 +80,8 @@
         {{request.user.customer.username}}<br>
         {{request.user.customer.car}}<br>
         {{request.user.customer.model}}<br>
-        {{request.user.customer.engine}}
+        {{request.user.customer.engine}}<br>
+
     </div>
 </footer>
 {%block scripts%}

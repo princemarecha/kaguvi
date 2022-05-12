@@ -2,27 +2,37 @@
 {%block title%}Welcome | {%endblock%}
 
  {%block content%}
-<div class="col-6">
-      <div class="col-12 justify-center" >
-           <h2 class="">NEWEST PRODUCTS</h2>
-      </div>
+<div class="container" style="background:#F2F2F2">
+<h3 class=" mt-5 pt-5 pl-2" style="color:#03D94A; font-weight:bold;">Newest Products</h3>
+<div class="col-12 d-flex container">
+
+    <br>
+    <br>
 
     {% for product in newest_product %}
+        <div class="col-3">
                 {% include 'product/parts/list_item.html' %}
+        </div>
     {%endfor%}
+    </div>
+    </div>
 
-    <h1 id="Reco_banner">Recommendations For You</h1>
+<div class="container" style="background:#F2F2F2">
+    <h3  id="Reco_banner"  class=" mt-5 pt-5 pl-2" style="color:#03D94A; font-weight:bold;">Recommendations For You</h3>
     <script>
         if ('{{request.user.is_anonymous}}' == 'True')
             {
                 document.getElementById("Reco_banner").innerHTML = "Sign Up to Get Recommendations";
             }
     </script>
-
-
+<div class="container">
     {% for product in recommended %}
+    <div class="col-3">
                 {% include 'product/parts/list_item.html' %}
+        </div>
     {%endfor%}
-
 </div>
+</div>
+
+
  {%endblock%}

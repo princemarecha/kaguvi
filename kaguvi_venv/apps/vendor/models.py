@@ -21,3 +21,17 @@ class Vendor(models.Model):
         items = self.items.filter(vendor_paid=True, order__vendor__in=[self.id])  # all unpaid items
         return sum((item.product.price * item.quantity) for item in items)
 
+class vendorProfile(models.Model):
+    vendor = models.OneToOneField(Vendor, null=True, on_delete=models.CASCADE)
+    address = models.CharField(max_length=255, default="")
+    latitude = models.CharField(max_length=255)
+    longitude = models.CharField(max_length=255, default="")
+    color = models.CharField(max_length=255, default="")
+    title = models.CharField(max_length=255, default="")
+    subTitle = models.CharField(max_length=255, default="")
+
+
+
+    def __str__(self):
+        return self.vendor.name
+
