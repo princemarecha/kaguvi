@@ -33,6 +33,34 @@
     {%endfor%}
 </div>
 </div>
+<p id="demo"></p>
+<script type='text/javascript'>
 
+        function GetMap() {
+            var map = new Microsoft.Maps.Map('#myMap', {
+                credentials: 'AjGsza8NB2YlYtJxm134DKtF90wtDwjxIOnOPApDdCmsY9Ot9QRoRXskTNseqa3y',
+                center: new Microsoft.Maps.Location(-17.8287335393263, 31.048260006526803)
+            });
+
+            {% for vendor in vendors %}
+                 center3 = new Microsoft.Maps.Location({{vendor.vendorprofile.latitude}}, {{vendor.vendorprofile.longitude}});
+
+                   //Create custom Pushpin
+            var pin3 = new Microsoft.Maps.Pushpin(center3, {
+                color: '{{vendor.vendorprofile.color}}',
+                title: '{{vendor.vendorprofile.title}}',
+                subTitle: '{{vendor.vendorprofile.subTitle}}',
+
+            });
+
+            //Add the pushpin to the map
+            map.entities.push(pin3);
+
+            {% endfor %}
+        }
+    </script>
+<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+
+<div id="myMap" style="position:relative;width:100%;height:400px;"></div>
 
  {%endblock%}

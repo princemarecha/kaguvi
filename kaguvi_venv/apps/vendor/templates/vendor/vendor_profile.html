@@ -9,13 +9,23 @@
 <form method="post"> {% csrf_token %}
     {{ form.as_p }}
 
-    <button type="button" onclick="myFunction()">Try it</button>
     <input onclick="myFunction()" type="submit" value="Save"/>
 </form>
 
 <script>
 function myFunction() {
-document.getElementById("id_vendor").selectedIndex = 1;
+
+
+var a = 1;
+var length = document.getElementById("id_vendor").options.length;
+
+  for (let i= 1; i<length;i++)
+        {
+            if (document.getElementById("id_vendor").options[i].text == ("{{request.user.username}}") )
+            {
+            document.getElementById("id_vendor").selectedIndex = i;
+            }
+        }
 }
 </script>
 {%endblock%}

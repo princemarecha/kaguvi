@@ -29,23 +29,34 @@ def become_vendor(request):
 
 @login_required #checks if user is logged in first before proceeding, or he will be redirected to the login page
 def vendor_admin(request):
-    vendor = request.user.vendor #vendor which belongs to this user
-    products = vendor.products.all()
-    orders = vendor.orders.all()
+    v_account = False
 
-    for order in orders:
-        order.vendor_amount = 0
-        order.vendor_paid_amount = 0
-        order.fully_paid = True
+    vendors = Vendor.objects.all()
+    for ven in vendors:
+        if ven.name == request.user.username:
+            v_account = True
 
-        for item in order.items.all():
-            if item.vendor == request.user.vendor:
-                if item.vendor_paid:
-                    order.vendor_paid_amount += item.get_total_price()
+    if v_account == True:
+        vendor = request.user.vendor #vendor which belongs to this user
+        products = vendor.products.all()
+        orders = vendor.orders.all()
 
-                else:
-                    order.vendor_amount += item.get_total_price()
-                    order.fully_paid = False
+        for order in orders:
+            order.vendor_amount = 0
+            order.vendor_paid_amount = 0
+            order.fully_paid = True
+
+            for item in order.items.all():
+                if item.vendor == request.user.vendor:
+                    if item.vendor_paid:
+                        order.vendor_paid_amount += item.get_total_price()
+
+                    else:
+                        order.vendor_amount += item.get_total_price()
+                        order.fully_paid = False
+    elif v_account == False:
+        return redirect("login")
+
 
     return render(request, 'vendor/vendor_admin.html',{'vendor': vendor, 'products':products,'orders':orders})
 

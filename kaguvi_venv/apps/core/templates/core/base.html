@@ -15,7 +15,7 @@
 <header>
      <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top p-5 pt-3 pb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{%url 'frontpage'%}"><img src="images/logo.png"></a>
+            <a class="navbar-brand"  href="{%url 'frontpage'%}"><img style="height:50px; width:50px;" src="{% static  'images/logo.png' %}"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -81,6 +81,10 @@
         {{request.user.customer.car}}<br>
         {{request.user.customer.model}}<br>
         {{request.user.customer.engine}}<br>
+
+        {% if request.user.customer.username != "" %}
+        <button><a href="{%url 'your_car'%}">Edit My Customer Profile</a></button>
+        {% endif %}
 
     </div>
 </footer>
