@@ -4,6 +4,7 @@ from apps.vendor.models import Vendor
 # Create your views here.
 def frontpage(request):
 
+
     v_account = False
     vendors = Vendor.objects.all()
     for ven in vendors:
@@ -14,14 +15,14 @@ def frontpage(request):
 
 
     value = request.user.is_anonymous
-    if value == True or v_account == True :
+    if value == True or (v_account == True and (request.user.customer.all == None) ) :
         context = {
             'newest_product': newest_product,
             'anonymous':value,
             'vendors': vendors
         }
 
-    elif value == False or v_account == False:
+    elif value == False or (v_account == True and (request.user.customer.all != None) ):
         c_profile = request.user.customer.all()
         recommended = []
         for cust in c_profile:

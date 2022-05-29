@@ -1,18 +1,67 @@
 {%extends 'core/base.html'%}
 {%block title%}Add Product | {%endblock%}
 {%block content%}
-
+<div class="shadow pt-3">
+    <h1 class="ms-3" style="color:white;">Add New Product</h1>
 <form method="post" action="." enctype="multipart/form-data"> <!---enctype form data because we have images here --->
     {% csrf_token %} <!---consistency, cant accept post request from other pages other than the current one--->
 <div class="m-5">
     {{form.as_p}} <!---show django form as paragraph--->
 
     <div class="field">
-        <div class="control">
-            <button class="btn btn-dark">Submit</button>
+        <div class="control pb-4 pt-4">
+            <button class="btn btn-success">Submit</button>
         </div>
     </div>
 </div>
 </form>
+</div>
 
+<style>
+    #id_title{
+    margin-left:179px;
+    }
+    #id_price{
+    margin-left:171px;
+    }
+    #id_car{
+    margin-left:179px;
+    }
+     #id_model{
+    margin-left:162px;
+    }
+    #id_engine{
+    margin-left:159px;
+    }
+     #id_username{
+    margin-left:9px;
+    }
+    #id_password1{
+    margin-left:14px;
+    }
+    @media only screen and (max-width:400px){
+        #id_title{
+    margin-left:0px;
+    }
+    #id_price{
+    margin-left:0px;
+    }
+    #id_car{
+    margin-left:0px;
+    }
+     #id_model{
+    margin-left:0px;
+    }
+    #id_engine{
+    margin-left:0px;
+    }
+     #id_username{
+    margin-left:0px;
+    }
+    #id_password1{
+    margin-left:0px;
+    }
+    }
+
+</style>
 {%endblock%}

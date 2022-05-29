@@ -4,7 +4,7 @@
 
 <div class="box">
     <h1 class="title">Vendor admin - {{ vendor.name }}</h1>
-    <a href="{% url 'add_product' %}" class="btn btn-primary">Add Product</a>
+
 
     <br><strong>My Balance: </strong>${{ vendor.get_balance }}<br>
     <strong>My Paid Amount: </strong>${{ vendor.get_paid_amount }}<br>
@@ -12,33 +12,34 @@
     <br><hr><a href="{% url 'edit_vendor' %}" class="btn btn-primary">EDIT VENDOR</a><br><hr>
     <a href="{% url 'logout' %}" class="btn btn-danger">LOG OUT</a>
 </div>
-<div class="box">
-    <h1 class="mb-4 mt-4">My Products</h1>
+<div class="shadow p-4 mt-4 mb-4">
+    <h1 class="mb-4 mt-4" style="color:white;">My Products</h1>
     {% if products %}
-        <table>
+        <table style="width:50%;">
             <thead>
-                <tr>
+                <tr style="color:silver;">
                     <th>Title</th>
-                    <th>Price</th>
+                    <th>Price($)</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for product in products %}
                     <tr>
-                        <td> <a href="{% url 'product' product.category.slug product.slug %}">{{ product.title }}</a></td>
-                        <td>{{ product.price }}</td>
-                        <td><a href ="{% url 'edit_product' product.id %}">Edit</a></td>
+                        <td><a style="font-weight:bold;" href="{% url 'product' product.category.slug product.slug %}">|{{ product.title }}</a></td>
+                        <td><a style="color:white;">|{{ product.price }}</a></td>
+                        <td><a style="color:yellow;" href ="{% url 'edit_product' product.id %}">|Edit</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
+     <div class="mt-4"><a href="{% url 'add_product' %}" class="btn btn-secondary">Add Product</a></div>
     {% else %}
         <p>You don't have any products yet....</p>
     {% endif %}
 </div>
 
-<div class="box">
+<div class="box mt-5 ">
         <h2 class="is-size-3 mb-4">My orders</h2>
 
         {% if orders %}
@@ -88,6 +89,11 @@
         {% endif %}
     </div>
 
+<style>
+    table a{
+        color:white;
+    }
+</style>
 
 
 {%endblock%}

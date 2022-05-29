@@ -4,7 +4,8 @@
 
 <form method="post" action="." enctype="multipart/form-data"> <!---enctype form data because we have images here --->
     {% csrf_token %}  <!---consistency, cant accept post request from other pages other than the current one--->
-<div class="m-5">
+<div class="shadow p-5">
+    <h2 class="mb-5" style="color:white;">Edit Product</h2>
     {{form.as_p}} <!---show django form as paragraph--->
 
     <div class="field">

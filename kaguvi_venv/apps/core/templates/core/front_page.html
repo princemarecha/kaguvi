@@ -10,7 +10,7 @@
     <br>
 
     {% for product in newest_product %}
-        <div class="col-xs-12 col-sm-6 col-md-5 col-lg-3" >
+        <div class="col-6 col-sm-6 col-md-5 col-lg-3" >
                 {% include 'product/parts/list_item.html' %}
         </div>
     {%endfor%}
@@ -25,14 +25,16 @@
                     document.getElementById("Reco_banner").innerHTML = "Sign Up to Get Recommendations";
                 }
         </script>
-        <div class="container">
+
         {% for product in recommended %}
-        <div class="col-3">
+       <div class="col-6 col-sm-6 col-md-5 col-lg-3" >
                     {% include 'product/parts/list_item.html' %}
             </div>
         {%endfor%}
+
 </div>
-</div>
+
+
 <p id="demo"></p>
 <script type='text/javascript'>
 

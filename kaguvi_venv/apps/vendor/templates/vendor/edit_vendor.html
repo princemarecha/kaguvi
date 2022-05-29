@@ -3,7 +3,8 @@
 {% block title %}Edit vendor | {% endblock %}
 
 {% block content %}
-    <h1 class="title">Edit vendor</h1>
+<div class="shadow p-5 m-5" >
+    <h1 class="title" style="color:white;">Edit vendor</h1>
 
     <form method="post" action=".">
         {% csrf_token %}
@@ -15,7 +16,7 @@
                 <input type="text" name="name" id="id_name" value="{{ vendor.name }}" class="input">
             </div>
 
-            <p class="help">This is not the same as the username!</p>
+            <p class="help" style="font-style:italic;">This is not the same as the username!</p>
         </div>
 
         <div class="field">
@@ -26,11 +27,18 @@
             </div>
         </div>
 
-        <div class="field">
+        <div class="field mt-3">
             <div class="control">
-                <button class="button is-dark is-uppercase">Save changes</button>
+                <button class="btn btn-dark ">Save changes</button>
             </div>
         </div>
     </form>
-<button><a href="{%url 'your_location' %}">Change My Location</a></button>
+    </div>
+<button class="btn btn-outline-dark" ><a style="color:black;" href="{%url 'your_location' %}">Change My Location</a></button>
+
+<style>
+    label{
+    color:white;
+    }
+</style>
 {% endblock %}

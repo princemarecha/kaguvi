@@ -5,14 +5,17 @@
 
 {%block content%}
 
-
+<div class="shadow p-3">
+    <h3 style="color:white;">Car Profile</h3>
+    <p style="font-style:italic; color:silver;">Field 'Name' is the Alias for your car(e.g. Home car #1)</p>
 <form method="post"> {% csrf_token %}
     {{ form.as_p }}
-
-    <button type="button" onclick="myFunction()">Try it</button>
-    <input onclick="myFunction()" type="submit" value="Save"/>
+<div class="mt-5">
+    <button class="d-none" type="button" onclick="myFunction()">Try it</button>
+    <input class="btn btn-success" onclick="myFunction()" type="submit" value="Save"/>
+    </div>
 </form>
-
+</div>
 <script>
 function myFunction() {
 var a = 1;
@@ -27,4 +30,34 @@ var length = document.getElementById("id_user").options.length;
         }
 }
 </script>
+
+<style>
+    #id_name{
+    margin-left:100px;
+    }
+    #id_car{
+    margin-left:116px;
+    }
+    #id_model{
+    margin-left:99px;
+    }
+    #id_engine{
+    margin-left:96px;
+    }
+    @media only screen and (max-width:400px){
+     #id_name{
+    margin-left:0px;
+    }
+    #id_car{
+    margin-left:0px;
+    }
+    #id_model{
+    margin-left:0px;
+    }
+    #id_engine{
+    margin-left:0px;
+    }
+    }
+
+</style>
 {%endblock%}

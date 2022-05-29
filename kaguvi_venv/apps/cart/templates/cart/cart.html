@@ -3,13 +3,14 @@
 {% block title %} Cart | {%endblock%}
 
 {% block content %}
-    <h1 class="title"> Cart </h1>
+
 
     {% if cart %}
 
-        <div>
+        <div class="cart shadow p-1 p-md-5">
+            <h1 class="title mb-5" style="color:white;"> Cart </h1>
             <div>
-                <table>
+                <table class="tab">
                     <thead>
                         <th></th>
                         <th>Product</th>
@@ -22,7 +23,7 @@
                     {% for item in cart %}
                         <tr>
                             <td>
-                                <figure class="image size-64">
+                                <figure class= "me-1 me-md-3">
                                     <img src="{{ item.product.get_thumbnail }}">
                                 </figure>
                             </td>
@@ -36,7 +37,7 @@
                                 <a href="?change_quantity={{ item.id }}&quantity=+1">+</a>
                             </td>
                             <td>${{ item.total_price }}</td>
-                            <td><a href="?remove_from_cart={{ item.id }}">Remove</a></td>
+                            <td><a style="color:yellow;" href="?remove_from_cart={{ item.id }}">Remove</a></td>
                         </tr>
                     {% endfor %}
                     </tbody>
@@ -52,7 +53,7 @@
             </div>
         </div>
 
-        <h2>Contact Information</h2>
+        <h2 class="mt-5">Contact Information</h2>
 
         <form method="post" action="." id="payment-form">
             {% csrf_token %}
@@ -74,7 +75,7 @@
             {% endif %}
 
 
-            <div class="columns">
+            <div class="columns shadow p-4 mt-4 mb-4">
                 <div>
                     <div>
                         <label>First name</label>
@@ -129,7 +130,7 @@
                 </div>
             </div>
 
-            <h2 class="subtitle">Payment Information</h2>
+            <h2 class="mt-5 subtitle">Payment Information</h2>
 
             <div id="card-element">
                 <!--A simple stripe element will be inserted here-->
@@ -141,15 +142,15 @@
                 {% endfor%}
             {% endif %}
 
-            <div class="field">
+            <div class="field mt-3">
                 <div>
-                    <button class="btn btn-primary">Check Out</button>
+                    <button class="btn btn-success">Check Out</button>
                 </div>
             </div>
         </form>
 
     {% else %}
-        <p>You don't have any products in your cart</p>
+        <p style="color:black;">You don't have any products in your cart</p>
 
     {% endif %}
 
@@ -190,4 +191,42 @@
         }
     </script>
 
+<style>
+    .columns label{
+    color:white;
+    }
+    .cart th{
+    color:white;
+    }
+    .cart tr{
+    color:white;
+    }
+     .cart td a{
+    color:silver;
+    }
+    figure img{
+    width:100px;
+    }
+    .tab{
+    width:50%;
+    }
+    @media only screen and (max-width:400px){
+    figure img{
+    width:50px;
+    }
+    .tab{
+    width:100%;
+    }
+    .tab th{
+    font-size:12px;
+    }
+    .tab td{
+    font-size:12px;
+    }
+    .tab a{
+    font-size:12px;
+    }
+    }
+
+</style>
 {% endblock %}

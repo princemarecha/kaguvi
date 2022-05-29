@@ -3,10 +3,10 @@
 
  {%block content%}
     {% if product.image %}
-    <div class="container col-12 ">
+    <div class="img_prod container col-12 ">
 
         <figure class=" col-12" >
-                <img class="col-12" style="width:400px;" src="{{ product.image.url }}">
+                <img class="col-12" src="{{ product.image.url }}">
         </figure>
 
     </div>
@@ -38,10 +38,10 @@
     </form>
 <button class="btn btn-dark mt-4" onclick="getLocation()"> Get / Refresh Directions</button>
 
-<p id="demo"></p>
+<p class="m-4" style="color:green; font-style:italic;" id="demo"></p>
 <div class="container-fluid row mt-4 mb-4">
-<div id="myMap" class="col-6  " ></div>
-<div id="printoutPanel" class="col-6 "></div>
+<div id="myMap" class="col-12 row" ></div>
+<div id="printoutPanel" class="col-12 row "></div>
 </div>
 <hr>
 <div class="shadow col-12 pb-5 mb-5 row">
@@ -53,7 +53,7 @@
         </div>
 
         {% for product in similar_products %}
-        <div class= "col-3">
+        <div class="col-6 col-sm-6 col-md-5 col-lg-3" >
             {% include 'product/parts/list_item.html' %}
         </div>
         {% endfor %}
@@ -74,10 +74,7 @@
     }
 
     function showPosition(position) {
-        x.innerHTML="Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude +
-            "<br>DestiLat: "+ {{product.vendor.vendorprofile.latitude}} +
-            "<br>DestiLong: " + {{product.vendor.vendorprofile.longitude}};
+        x.innerHTML="Map loading from Bing, please wait (Retry if it takes more than a while)";
         var lat  = position.coords.latitude;
         var long = position.coords.longitude;
 
@@ -111,6 +108,32 @@
 
 </script>
 <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+<style>
+    .img_prod img{
+    width:400px;
+    }
+    #myMap{
+    position:relative;
+    width:100%;
+    height:400px;
+    }
+    body p{
+    color:black;
+    }
+    .shadow p{
+    color:white;
+    }
+    @media only screen and (max-width:400px){
+    .img_prod img{
+    width:100%;
+    }
+    #myMap{
+    position:relative;
+    width:600px;
+    height:400px;
+    }
+    }
 
+</style>
 
  {% endblock %}
