@@ -3,15 +3,16 @@
 {%block content%}
 
 <h1> Vendors </h1>
+<h6>(click to vendor to expand)</h6>
 
     <div>
         {% for vendor in vendors %}
             <div>
                 <div>
-                    <h2 style="color: green;">{{ vendor.name }}</h2>
+                    <a href="{% url 'vendor' vendor.id %}" style="color: green;">{{ vendor.name }}</a>
                 </div>
                 <hr>
-                <a href="{% url 'vendor' vendor.id %}" class = "btn btn-primary">VIEW</a>
+
             </div>
         {% endfor %}
 

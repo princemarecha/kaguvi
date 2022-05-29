@@ -1,7 +1,8 @@
 {%extends 'core/base.html'%}
 {%block title%}Become Vendor | {%endblock%}
 {%block content%}
-
+<div class="bc shadow  pt-1  p-md-5 mb-md-4">
+     <h2 style="color:white;">Become Vendor</h2>
 <form method="post" action=".">
     {% csrf_token %} <!---consistency, cant accept post request from other pages other than the current one--->
 <div class="m-5">
@@ -13,9 +14,28 @@
         </div>
     </div>
 </div>
+
 </form>
+</div>
 <hr>
     <h2>Already have an account?</h2>
-    <a href="{% url 'login' %}">Log In</a>
+    <a class="btn btn-outline-dark mb-3" href="{% url 'login' %}">Log In</a>
 </hr>
+
+
+<style>
+    #id_username{
+    margin-left:9px;
+    }
+    #id_password1{
+    margin-left:14px;
+    }
+    .bc li{
+    list-style:none;
+    font-size:8pt;
+    color:rgba(255,255,255,0.9);
+    font-style:italic;
+
+    }
+</style>
 {%endblock%}

@@ -2,21 +2,23 @@
 {%block title%}{{vendor.name}} | {%endblock%}
 
  {%block content%}
-<div class="col-6">
+<div class="main col-12 row shadow p-2 pt-4 pb-4 ">
       <div class="col-12 justify-center" >
-           <h2 class="">{{vendor.name}}</h2>
+           <h2 style="color:white;" class="mt-3">{{vendor.name}}</h2>
       </div>
 
       {% for product in vendor.products.all %}
+    <div class="col-3">
           {% include 'product/parts/list_item.html' %}
+    </div>
       {%endfor%}
 
 </div>
-<p>Click the button to get your coordinates.</p>
+<p class="mt-5" style="color:black;">(Click the button to get directions to the vendor)</p>
 
-<button onclick="getLocation()">Try It</button>
+<button class="btn btn-outline-success" onclick="getLocation()">Directions</button>
 
-<p id="demo"></p>
+<p  class="mt-5" style="color:green; font-style:italic;" id="demo"></p>
 
 <script>
     var x = document.getElementById("demo");
@@ -30,10 +32,8 @@
     }
 
     function showPosition(position) {
-        x.innerHTML="Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude +
-            "<br>DestiLat: "+ {{vendor.vendorprofile.latitude}} +
-            "<br>DestiLong: " + {{vendor.vendorprofile.longitude}};
+        x.innerHTML="Fetching directions from Bing, Please Wait, retry if it takes more than a while";
+
         var lat  = position.coords.latitude;
         var long = position.coords.longitude;
 
@@ -67,8 +67,20 @@
 
 </script>
 <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
-<div id="myMap" style="position:relative;width:600px;height:400px;"></div>
-<div id="printoutPanel"></div>
+<div class="row col-12">
+<div class="col-12" id="myMap" style="position:relative;width:100%;height:400px;"></div>
+<div class="col-12" id="printoutPanel"></div>
+</div>
+<style>
+    body p{
+         font-size:10pt;
+         color:black;
+         }
+     .main p{
+         font-size:10pt;
+         color:white;
+         }
 
+</style>
 
  {%endblock%}

@@ -2,15 +2,18 @@
 {%block title%}Search | {%endblock%}
 
  {%block content%}
-<div class="col-6">
-      <div class="col-12 justify-center" >
-           <h2 class="">Search</h2>
-          <h3>Search Item : "{{ query }}"</h3>
+<div class="col-12 pb-3 mb-3 row shadow">
+      <div class="justify-center" >
+           <h2 class="mt-3" style="color:white;">Search</h2>
+          <h3 style="color:rgba(255,255,255,0.9)">Search Item : "{{ query }}"</h3>
       </div>
 
       {% for product in products %}
+    <div class="col-3">
           {% include 'product/parts/list_item.html' %}
+    </div>
       {%endfor%}
+
 
 </div>
  {%endblock%}

@@ -5,13 +5,13 @@ from apps.vendor.models import Vendor
 def frontpage(request):
 
     v_account = False
-
     vendors = Vendor.objects.all()
     for ven in vendors:
         if ven.name == request.user.username:
             v_account = True
 
     newest_product = Product.objects.all()[0:8]
+
 
     value = request.user.is_anonymous
     if value == True or v_account == True :
@@ -22,13 +22,17 @@ def frontpage(request):
         }
 
     elif value == False or v_account == False:
-        recommended = Product.objects.filter(car=request.user.customer.car, model=request.user.customer.model,engine=request.user.customer.engine)[0:8]
-        context = {
-            'newest_product': newest_product,
-            'recommended': recommended,
-            'anonymous': value,
-            'vendors': vendors
-        }
+        c_profile = request.user.customer.all()
+        recommended = []
+        for cust in c_profile:
+            recommended.extend(Product.objects.filter(car=cust.car, model=cust.model,engine=cust.engine)[0:8])
+            context = {
+                'c_profile':c_profile,
+                'newest_product': newest_product,
+                'recommended': recommended,
+                'anonymous': value,
+                'vendors': vendors
+            }
 
     return render(request, 'core/front_page.html', context) #newest_products to show newer products on front page.
 

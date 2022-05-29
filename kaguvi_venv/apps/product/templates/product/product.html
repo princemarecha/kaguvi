@@ -3,18 +3,20 @@
 
  {%block content%}
     {% if product.image %}
+    <div class="container col-12 ">
 
-        <figure class="">
-                <img src="{{ product.image.url }}">
+        <figure class=" col-12" >
+                <img class="col-12" style="width:400px;" src="{{ product.image.url }}">
         </figure>
 
+    </div>
     {% endif %}
 
     <h1 class="title">{{ product.title }}, ${{ product.price }}</h1>
 
-    <p><span>{{ product.vendor.name }}</span></p>
+    <p style="color:black;"><span>Vendor: {{ product.vendor.name }}</span></p>
 
-    <p>{{ product.description }}</p>
+    <p style="color:black;">Description: {{ product.description }}</p>
 
     <hr>
 
@@ -27,34 +29,37 @@
     {%endif%}
     <form method="post" action=".">
         {% csrf_token %}
-        <div>
-            <input type="number" name="quantity" value="1" class="input" min="1">
+        <div class="d-flex">
+            <input type="number" name="quantity" value="1" class="input" min="1"> <p class="ms-3" style="color:black;font-style:italic; font-size:12pt;">Enter Product Quantity</p>
         </div>
-        <div>
-            <button class="btn btn-primary">Add to Cart</button>
+        <div class="mt-2">
+            <button class="btn btn-success">Add to Cart</button>
         </div>
     </form>
-<button onclick="getLocation()"> Get / Refresh Directions</button>
+<button class="btn btn-dark mt-4" onclick="getLocation()"> Get / Refresh Directions</button>
 
 <p id="demo"></p>
-
-<div id="myMap" style="position:relative;width:600px;height:400px;"></div>
-<div id="printoutPanel"></div>
+<div class="container-fluid row mt-4 mb-4">
+<div id="myMap" class="col-6  " ></div>
+<div id="printoutPanel" class="col-6 "></div>
+</div>
 <hr>
-
+<div class="shadow col-12 pb-5 mb-5 row">
     {% if similar_products %}
     <hr>
 
-    <div>
         <div class="col-12">
-            <h2>Similar Products</h2>
+            <h2 class="pt-4" style="color:white;">Similar Products</h2>
         </div>
 
         {% for product in similar_products %}
+        <div class= "col-3">
             {% include 'product/parts/list_item.html' %}
+        </div>
         {% endfor %}
-    </div>
+
     {% endif %}
+</div>
 
 
 <script>

@@ -4,8 +4,8 @@ from django.db import models
 
 class Customer(models.Model):
 
-    user = models.OneToOneField(User, null=True,on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
+    user = models.ForeignKey(User, null=True,on_delete=models.CASCADE, related_name="customer")
+    name = models.CharField(max_length=255, unique=False)
     car = models.CharField(max_length=255, default="")
     model = models.CharField(max_length=255, default="")
     engine = models.CharField(max_length=255, default="")

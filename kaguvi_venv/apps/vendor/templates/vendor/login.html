@@ -2,18 +2,32 @@
 {%block title%}Log In | {%endblock%}
 {%block content%}
 
-<h1>Vendor Login</h1>
+<div class=" container row shadow p-5 mb-5">
+<h1 style="color:white;">Vendor Login</h1>
 
 <form method="post" action=".">
     {% csrf_token %} <!---consistency, cant accept post request from other pages other than the current one--->
-<div class="m-5">
+<div class="m-5 col-4 ">
     {{form.as_p}} <!---show django form as paragraph--->
 
     <div class="field">
         <div class="control">
-            <button class="btn btn-dark">Log In</button>
+            <button class="btn btn-outline-secondary" style="color:white;">Log In</button>
         </div>
     </div>
 </div>
 </form>
+    </div>
+<style>
+    #id_username{
+    margin-left:10px;
+    }
+    #id_password{
+    margin-left:14px;
+    }
+</style>
+
+</style>
+</style>
+
 {%endblock%}

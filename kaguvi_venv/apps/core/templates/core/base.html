@@ -38,21 +38,43 @@
             </div>
         </div>
     </nav>
-
-    <div class="d-flex m-4 p-4" style="background:#3E3C3C">
+    <div class="container mt-2">
+    <div class="row d-none d-sm-flex  row  p-4 col-12 " style="background:#3E3C3C">
         {% for category in menu_categories %}
-                    <li class="">
-                    <a href="{% url 'category' category.slug %}" style="color:#E1E1E1; font-family: Century Gothic;">{{category.title}}</a>
+                    <li class="col-xs-12 col-md-4 col-lg-2" style="list-style:none; " >
+                    <a href="{% url 'category' category.slug %}" style="color:#E1E1E1; font-family: Century Gothic;text-decoration:none;">{{category.title}}</a>
                     </li>
         {% endfor %}
     </div>
+    </div>
 
-    <form method="get" action="{% url 'search' %}" class="m-4 " style="width:300px;">
+        <button class="navbar-toggler d-block d-sm-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <p>Categories</p>
+         </button>
+
+        <div class="d-sm-none navbar container-fluid row col-12 " >
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1" >
+            <div class="mt-4 p-4" style="background:#3E3C3C">
+            <ul class="navbar-nav">
+        {% for category in menu_categories %}
+                    <li class="navlink col-xs-12 col-lg-2" style="list-style:none;" >
+                    <a href="{% url 'category' category.slug %}" style="color:#E1E1E1; font-family: Century Gothic;text-decoration:none;">{{category.title}}</a>
+                    </li>
+        {% endfor %}
+            </ul>
+                </div>
+        </div>
+    </div>
+
+    <div class="container">
+    <form method="get" action="{% url 'search' %}" class="m-4" style="width:300px;">
        <div class="input-group">
               <input type="text" class="form-control rounded"  placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="query"/>
               <button class="btn btn-outline-dark btn-dark " style="color:gray"  >search</button>
         </div>
     </form>
+           </div>
 
 </header>
  <section class="section">
@@ -63,31 +85,92 @@
  </section>
 </body>
 <footer>
-    <div class="container">
-        <h3 class="mb-4"> Kaguvi Motor Spares</h3>
-
+    <div class="container mt-5">
         {%if request.user.is_authenticated%}
-            <a href="{%url 'vendor_admin'%}" class="huchi">Vendor Admin</a>
-        {% else %}
-            <a href="{%url 'become_vendor'%}" class="huchi">Become Vendor</a>
+         <table  style="width:300px;" >
+        <thead>
+        <tr>
+            <th class="ml-3">Car</th>
+            <th class="ml-3">Model</th>
+            <th class="ml-3">Engine</th>
+        </tr>
+        </thead >
+            <tbody >
+
+        {%for prof in c_profile %}
+                 <tr >
+                <td>{{prof.car}}</td>
+                <td>{{prof.model}}</td>
+                <td>{{prof.engine}}</td>
+                 </tr>
+        {% endfor %}
+
+            <hr style="color:black;">
+            </tbody>
+        </table>
+
+        <hr style="color:black;">
+        {% if request.user.customer.username != "" %}
+        <a class="btn btn-outline-dark mt-3 mb-3" href="{%url 'your_car'%}">Edit My Customer Profile</a></button>
+        {% endif %}
         {% endif %}
 
-        <a href= "{%url 'become_customer'%}">Become a customer</a>
+        <div class="shadow p-4 pe-5 ps-5 mb-3 mt-5">
+            <h3 class="mb-4" style="color:white;"> Kaguvi Motor Spares</h3>
+
+            <div class="buy">
+        {%if request.user.is_authenticated%}
+        <a href="{%url 'vendor_admin'%}" class="huchi">Vendor Admin</a><br>
+        {% else %}
+            <a href="{%url 'become_vendor'%}" class="huchi">Become Vendor</a><br>
+        {% endif %}
+
+        <a href= "{%url 'become_customer'%}">Become a customer</a><br>
         <a href= "{%url 'vendors'%}">Vendors</a><br>
         <a href="{% url 'customer_login' %}">Customer Log In</a><br>
         <a href="{% url 'login' %}">Vendor Log In</a><br>
-        <h4>Ndakapenfa</h4>
-        {{request.user.customer.username}}<br>
-        {{request.user.customer.car}}<br>
-        {{request.user.customer.model}}<br>
-        {{request.user.customer.engine}}<br>
+        </div>
+        <div class="m-3"></div>
 
-        {% if request.user.customer.username != "" %}
-        <button><a href="{%url 'your_car'%}">Edit My Customer Profile</a></button>
-        {% endif %}
+        </div>
 
     </div>
 </footer>
 {%block scripts%}
 {%endblock%}
+     <style>
+         p{
+         font-size:10pt;
+         color:white;
+         }
+         .shadow{
+          background: #3E3C3C;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+          backdrop-filter: blur(5px);
+         }
+         .this{
+         font-size:10pt;
+         color:white;
+         }
+         .card{
+         background: rgba(255, 255, 255, 0.09);
+         border-radius: 10px;
+         }
+        hr{
+        margin:1px;
+        color:rgba(255, 255, 255, 0.5);
+        }
+        a{
+        text-decoration:none;
+        }
+        .buy a{
+           color:rgba(255, 255, 255, 0.7);
+        }
+        .printoutPanel a
+        {
+        color:black;
+        }
+
+
+     </style>
 </html>

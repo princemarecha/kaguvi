@@ -1,14 +1,17 @@
- <div class="p-5">
-     <div class="box">
-         <figure >
-             <img src="{{ product.get_thumbnail }}" class="product_img mb-2 ml-0" >
-         </figure>
-         <h4 class="subtitle"> {{product.title}} </h4>
-         <h6 class="subtitle"> For: {{product.car}} </h6>
-         <h6 class="subtitle"> Model: {{product.model}} </h6>
-         <h6 class="subtitle"> Engine: {{product.engine}} </h6>
-         <h6 class="price">${{product.price}}</h6>
-         <div class="d-flex justify-content-end"><button  style=""><a href="{% url 'product' product.category.slug product.slug %}">VIEW</a></button></div>
+ <div class="mt-3">
+     <div class="card mt-2" style="width:200px" >
 
+         <img  src="{{ product.get_thumbnail }}" class="product_img mb-2 ml-0 card-img-top" style="width:198px;border-bottom: 30px;);">
+            <div class="card-body">
+                 <h6 class="card-title mb-2" style="font-weight:bold; color:white;"> {{product.title}} </h6>
+                <hr>
+                 <p class="card-text m-0" style="font-size:10pt;"> For: {{product.car}} </p>
+                 <p class="card-text m-0"> Model: {{product.model}} </p>
+                 <p class="card-text m-0"> Engine: {{product.engine}} </p>
+                <hr>
+                 <p class="card-text m-0" style=" font-weight:bold;">${{product.price}}</p>
+                 <div class="d-flex justify-content-end"><a class="this btn btn-outline-secondary" a href="{% url 'product' product.category.slug product.slug %}">VIEW</a></div>
+            </div>
      </div>
+
  </div>
