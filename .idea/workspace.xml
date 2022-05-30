@@ -3,25 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="436e877f-e0b3-445f-ae75-00ad55530b81" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/cart/templates/cart/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/cart/templates/cart/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/cart/templates/cart/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/cart/templates/cart/success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/front_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/front_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/customers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/customers/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/core/templates/core/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/customers/templates/customer/become_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/customers/templates/customer/become_customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/customers/templates/customer/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/customers/templates/customer/customer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/customers/templates/customer/customer_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/customers/templates/customer/customer_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/category.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/parts/list_item.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/parts/list_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/product/templates/product/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/add_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/add_product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/become_vendor.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/become_vendor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/edit_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/edit_vendor.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/edit_vendor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendor.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendor_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendor_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendor_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendor_profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendors.html" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/templates/vendor/vendors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/apps/vendor/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kaguvi_venv/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kaguvi_venv/static/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/kaguvi_venv/static/styles/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,16 +58,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\kaguvi_venv" />
-      <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\kaguvi\kaguvi" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\kaguvi" />
       <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\kaguvi_venv\static\images" />
       <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\kaguvi_venv\static" />
       <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\kaguvi_venv\media\images" />
       <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\media" />
-      <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\kaguvi_venv" />
+      <recent name="C:\Users\Va Marecha\PycharmProjects\Kaguvi\kaguvi\kaguvi" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -93,22 +96,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="requirements.txt" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1647405479081">
+    <state x="137" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1653813988722">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="137" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1647405479081" />
+    <state x="137" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1653813988722" />
     <state x="350" y="0" key="CommitChangelistDialog2" timestamp="1647346037387">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="350" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1647346037387" />
-    <state x="186" y="29" key="SettingsEditor" timestamp="1652782175474">
+    <state x="186" y="29" key="SettingsEditor" timestamp="1653814090781">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="186" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1652782175474" />
-    <state x="391" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1653713784498">
+    <state x="186" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1653814090781" />
+    <state x="391" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1653839792353">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="391" y="211" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1653713784498" />
+    <state x="391" y="211" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1653839792353" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1651920571519">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

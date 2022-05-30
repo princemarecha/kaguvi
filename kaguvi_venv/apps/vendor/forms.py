@@ -12,4 +12,4 @@ class ProductForm(ModelForm):
 class vendorProfile(ModelForm):
     class Meta:
         model = vendorProfile
-        fields = ['vendor','address', 'longitude', 'latitude','color', 'title', 'subTitle']
+        fields = ['vendor','address','latitude','longitude','color', 'title', 'subTitle']
