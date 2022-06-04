@@ -137,3 +137,9 @@ def vendor_profile(request):
     }
     return render(request, 'vendor/vendor_profile.html', context)
 
+def delete_item(request, item_id):
+    item = Product.objects.get(pk=item_id)
+    item.delete()
+
+    return redirect('vendor_admin')
+

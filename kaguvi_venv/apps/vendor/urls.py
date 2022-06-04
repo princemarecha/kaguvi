@@ -17,4 +17,6 @@ urlpatterns = [
 
     path('',views.vendors, name = 'vendors'),
     path('<int:vendor_id>/',views.vendor, name = 'vendor'),
+
+    path('delete_item/<item_id>', views.delete_item, name='delete-item'),
 ]
