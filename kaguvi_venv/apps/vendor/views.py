@@ -121,6 +121,7 @@ def vendors(request):
     return render(request, 'vendor/vendors.html', {'vendors': vendors})
 
 def vendor(request, vendor_id):
+
     vendor = get_object_or_404(Vendor, pk=vendor_id) #Vendor model and its primary key for detailed view of vendor
     return render(request, 'vendor/vendor.html', {'vendor': vendor})
 

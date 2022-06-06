@@ -24,9 +24,12 @@
     var x = document.getElementById("demo");
 
     function getLocation() {
-        if (navigator.geolocation) {
+        if (navigator.geolocation)
+        {
             navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
+        }
+        else
+        {
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
@@ -38,7 +41,7 @@
         var long = position.coords.longitude;
 
         var latDest=  {{vendor.vendorprofile.latitude}};
-        var longDest= {{vendor.vendorprofile.longitude}}
+        var longDest= {{vendor.vendorprofile.longitude}};
         transfer(lat,long,latDest,longDest);
     }
 
