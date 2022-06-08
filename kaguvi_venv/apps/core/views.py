@@ -47,8 +47,11 @@ def frontpage(request):
     return render(request, 'core/front_page.html', context) #newest_products to show newer products on front page.
 
 def contact(request):
+    context = {
 
-    return render(request, 'core/contact.html',[])
+    }
+
+    return render(request, 'core/contact.html',context)
 
 def delete_car(request, car_id):
     car = Customer.objects.get(pk=car_id)

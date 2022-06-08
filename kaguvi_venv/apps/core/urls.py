@@ -1,5 +1,4 @@
 from django.urls import path # touse path when adding urls
-
 from . import  views #import views in the current folder
 
 urlpatterns = [

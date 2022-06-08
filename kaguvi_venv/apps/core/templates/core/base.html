@@ -26,7 +26,7 @@
                         <a class="nav-link active" href="{%url 'frontpage'%}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{%url 'contact' %}">Contact</a> <!---name of view is used in url addressing "contact"--->
+                        <a class="nav-link " href="#">Contact</a> <!---name of view is used in url addressing "contact"--->
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About Us</a>
@@ -44,6 +44,14 @@
             </div>
         </div>
     </nav>
+
+    {% if request.user.is_authenticated == True %}
+        <p  id="user" class="p-3 pb-0" style="color:gray;">Logged in as: {{request.user}}</p>
+    {% endif %}
+    {% if request.user.is_authenticated != True %}
+        <p  id="anonymous_user" class="p-3 pb-0" style="color:gray;">Anonymous User</p>
+    {% endif %}
+
 
     <div class="container mt-2">
     <div class="row d-none d-sm-flex  row  p-4 col-12 " style="background:#3E3C3C">
@@ -197,6 +205,9 @@
         height:50px;
         width:50px;
         }
+         #myMap{
+          height:400px;
+         }
         @media only screen and (max-width:400px){
          .navbar-brand img{
          padding:0px;
@@ -213,6 +224,9 @@
         .banner-last img{
          width:100%;
          height:100px;
+         }
+           #myMap{
+          height:250px;
          }
          }
          @media only screen and (min-width:401px) and (max-width: 512px){
@@ -232,6 +246,7 @@
          width:100%;
          height:180px;
          }
+
          }
 
      </style>
