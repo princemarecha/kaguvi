@@ -23,7 +23,8 @@
         function GetMap() {
             var map = new Microsoft.Maps.Map('#myMap', {
                 credentials: 'AjGsza8NB2YlYtJxm134DKtF90wtDwjxIOnOPApDdCmsY9Ot9QRoRXskTNseqa3y',
-                center: new Microsoft.Maps.Location(-17.8287335393263, 31.048260006526803)
+                center: new Microsoft.Maps.Location(-17.83627539023471, 31.04069258206628),
+                zoom: 18
             });
 
             {% for vendor in vendors %}

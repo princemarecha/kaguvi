@@ -15,8 +15,9 @@
     <h1 class="title">{{ product.title }}, ${{ product.price }}</h1>
 
     <p style="color:black;"><span>Vendor: {{ product.vendor.name }}</span></p>
+    <p style="color:black;"><span>Shop Physical Address: {{ product.vendor.vendorprofile.address}}</span></p>
 
-    <p style="color:black;">Description: {{ product.description }}</p>
+    <p style="color:black;">Item Description: {{ product.description }}</p>
 
     <hr>
 
@@ -33,7 +34,19 @@
             <input type="number" name="quantity" value="1" class="input" min="1"> <p class="ms-3" style="color:black;font-style:italic; font-size:12pt;">Enter Product Quantity</p>
         </div>
         <div class="mt-2">
+            {% if request.user.is_authenticated != True %}
             <button class="btn btn-success">Add to Cart</button>
+            {% endif %}
+            {% if request.user.is_authenticated == True %}
+                {% if request.user.username != product.vendor.name %}
+                 <button class="btn btn-success">Add to Cart</button>
+                {%endif%}
+                {% if request.user.username == product.vendor.name %}
+                    <p style="color:green;">You own this product, you cannot add it to cart</p>
+                {%endif%}
+            {% endif %}
+
+
         </div>
     </form>
 <button class="btn btn-dark mt-4" onclick="getLocation()"> Get / Refresh Directions</button>
