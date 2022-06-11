@@ -19,4 +19,5 @@ urlpatterns = [
     path('<int:vendor_id>/',views.vendor, name = 'vendor'),
 
     path('delete_item/<item_id>', views.delete_item, name='delete-item'),
+    path('delete_user/', views.delete_user, name='delete-user'),
 ]

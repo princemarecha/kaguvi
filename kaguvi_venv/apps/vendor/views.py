@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required #so that users can log
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm #use default user creation form
 from django.utils.text import slugify #to slugify the title
+from django.contrib.auth.models import User
 # Create your views here.
 from apps.product.models import Product
 #import our database model
@@ -143,4 +144,10 @@ def delete_item(request, item_id):
     item.delete()
 
     return redirect('vendor_admin')
+
+def delete_user(request):
+    user = request.user
+    user.delete()
+    return redirect("vendor_admin")
+
 
