@@ -14,10 +14,11 @@ def search(request):
 
     return render(request,'product/search.html',{'products': products, 'query': query})
 
-def product (request, category_slug, product_slug):
+def product (request, category_slug, product_slug,product_id):
     cart = Cart(request)
 
-    product = get_object_or_404(Product, category__slug = category_slug, slug =product_slug)
+    #product = get_object_or_404(Product, category__slug = category_slug, slug =product_slug )
+    product = Product.objects.get(pk = product_id)
 
     if request.method == 'POST':
         form = addToCartForm(request.POST)
@@ -29,7 +30,7 @@ def product (request, category_slug, product_slug):
 
             messages.success(request, 'The product was added to the cart')
 
-            return redirect('product', category_slug = category_slug, product_slug =product_slug)
+            return redirect('product', category_slug = category_slug, product_slug =product_slug, product_id = product_id)
 
     else:
         form = addToCartForm()

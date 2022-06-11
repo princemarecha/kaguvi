@@ -26,7 +26,7 @@
             <tbody>
                 {% for product in products %}
                     <tr>
-                        <td><a style="font-weight:bold;" href="{% url 'product' product.category.slug product.slug %}">|{{ product.title }}</a></td>
+                        <td><a style="font-weight:bold;" href="{% url 'product' product.category.slug product.slug product.id %}">|{{ product.title }}</a></td>
                         <td><a style="color:white;">|{{ product.price }}</a></td>
                         <td><a style="color:yellow;" href ="{% url 'edit_product' product.id %}">|Edit</a></td>
                         <td><a style="color:red;" href="{% url 'delete-item' product.id %}">Remove</a></td>
