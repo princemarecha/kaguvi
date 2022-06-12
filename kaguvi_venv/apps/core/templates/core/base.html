@@ -107,6 +107,7 @@
         {%if request.user.is_authenticated%}
          <table class="turnoff" style="width:300px;" >
         <thead>
+        <h3 class="turnoff">Your Cars</h3>
         <tr>
             <th class="ml-3">Car</th>
             <th class="ml-3">Model</th>
@@ -133,7 +134,7 @@
 
         <hr class="turnoff" style="color:black;">
         {% if request.user.customer.username != "" %}
-        <a class="btn btn-outline-dark mt-3 mb-3 turnoff" href="{%url 'your_car'%}">Add Car Profile</a></button>
+        <a class="btn btn-outline-dark mt-3 mb-3 turnoff" href="{%url 'your_car'%}">Add New Car</a></button>
         {% endif %}
         {% endif %}
 
@@ -179,7 +180,7 @@
 {%endblock%}
      <style>
         .errorlist li{
-        color:white;
+        color:yellow;
         }
 
          .hide{

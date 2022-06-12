@@ -16,7 +16,11 @@ class vendorProfile(forms.ModelForm):
         fields = ['vendor','address','latitude','longitude','color', 'title', 'subTitle']
         labels = {"vendor":""}
         widgets ={
-            #'address': forms.TextInput(attrs={'class': 'form-control'}),
-            #'color': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.TextInput(attrs={'placeholder': '00 Kaguvi Street, Hre'}),
+            'color': forms.TextInput(attrs={'placeholder': 'blue'}),
+            'latitude': forms.TextInput(attrs={'placeholder': '-17.123456'}),
+            'longitude': forms.TextInput(attrs={'placeholder': '34.46364636'}),
+            'title': forms.TextInput(attrs={'placeholder': 'Mr Vendor'}),
+            'subTitle': forms.TextInput(attrs={'placeholder': 'Auto Parts Sale'}),
         }
 
