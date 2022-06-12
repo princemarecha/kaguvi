@@ -12,3 +12,8 @@ class CustomerProfile(forms.ModelForm):
             'model',
             'engine'
         ]
+        labels = {"user": ""}
+        widgets = {
+            # 'address': forms.TextInput(attrs={'class': 'form-control'}),
+            # 'color': forms.TextInput(attrs={'class': 'form-control'}),
+        }
