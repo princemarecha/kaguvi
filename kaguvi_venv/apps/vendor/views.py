@@ -139,6 +139,27 @@ def vendor_profile(request):
     }
     return render(request, 'vendor/vendor_profile.html', context)
 
+def vendor_profile_ed(request):
+    vendor = request.user.vendor.vendorprofile
+   # vendorp =vendorProfile.filter(pk=0)
+
+    if request.method == 'POST':
+        form = vendorProfile(request.POST, request.FILES, instance=vendor)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('vendor_admin')
+    else:
+        form = vendorProfile(instance=vendor)
+
+    context = {
+        'form':form,
+        'vendor':vendor
+    }
+    return render(request, 'vendor/vendor_profile.html', context)
+
+
 def delete_item(request, item_id):
     item = Product.objects.get(pk=item_id)
     item.delete()

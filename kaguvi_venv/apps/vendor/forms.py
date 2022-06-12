@@ -18,8 +18,8 @@ class vendorProfile(forms.ModelForm):
         widgets ={
             'address': forms.TextInput(attrs={'placeholder': '00 Kaguvi Street, Hre'}),
             'color': forms.TextInput(attrs={'placeholder': 'blue'}),
-            'latitude': forms.TextInput(attrs={'placeholder': '-17.123456'}),
-            'longitude': forms.TextInput(attrs={'placeholder': '34.46364636'}),
+            'latitude': forms.TextInput(attrs={'placeholder': '-17.123456', 'type':'number', 'step':'any'}),
+            'longitude': forms.TextInput(attrs={'placeholder': '34.46364636', 'type':'number', 'step':'any'}),
             'title': forms.TextInput(attrs={'placeholder': 'Mr Vendor'}),
             'subTitle': forms.TextInput(attrs={'placeholder': 'Auto Parts Sale'}),
         }
