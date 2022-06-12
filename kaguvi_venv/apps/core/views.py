@@ -12,6 +12,15 @@ def frontpage(request):
         print(ven.name)
         if ven.name == request.user.username:
             v_account = True
+            try:
+                print(ven.vendorprofile.latitude)
+            except:
+                user = request.user
+                user.delete()
+                return redirect('frontpage')
+
+
+
 
     newest_product = Product.objects.all()[0:8]
 
